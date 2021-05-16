@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Tripstargram</title>
+        <meta charset="UTF-8" />
+        <style type="text/css">
+            .line{border-color:black;border-style:solid;border-width:thin;}
+            .status{text-align:center;}
+            .topstatus{z-index:1;position:fixed; right:0px; top:90%;}
+            .img{width:"10";height:"10";position:relative;top:15px;}
+
+            body{margin:0;padding:0;height:100%;} 
+            body{background-color:white;overflow-x: hidden;}
+            ul li a{font-size: 20pt;font-weight:bold;text-align:center;text-decoration:none;color:black;}  
+            ul li a span{color:black;background-color: rgb(221, 220, 220);position:relative;top:50px;margin:3px;}
+            ul li a span:hover{color:white;background-color: blue;}
+            ul {list-style:none; margin:0; padding:0;height:100%;position:relative;top:-10;background-color:white; font-size:15pt;}
+            ul li {width:25%;height:100%;margin: 1 1 1 1; padding: 0 0 0 0; border : 0;float: left;}
+ 
+        </style>
+    </head>
+
+    <body id="top">      
+        <header class="status">
+            <ul>
+                <li><a href="login.html" title="로그인 창으로 이동"><img src="image/logo.JPG" class="img" /></a></li>
+                <li><a href="matepage1.html" onclick="check()" title="여행메이트를 구해요"><span>&nbsp;&nbsp;여행메이트를 구해요&nbsp;&nbsp;</span></a></li>
+                <li><a href="freewritepage.html" title="자유로운 글쓰기 게시판"><span>&nbsp;&nbsp;자유로운 글쓰기 게시판&nbsp;&nbsp;</span></a></li>
+                <li><a href="mypage.html" title="마이페이지로 이동"><img src="image/mypage.JPG" class="img" /></a></li>
+            </ul>
+        </header>
+        <p><br/></p>
+        <p><br/></p>
+        <p><br/></p>
+        <hr class="line"/> 
+
+        <script type="text/javascript">
+            function check(){
+                var asking="여행 메이트 게시판은 '실명제'로 운영되는 게시판입니다.\n 회원가입시, 작성된 프로필 정보로 운영됩니다.\n 게시판으로 입장하는 것에 동의하십니까?";
+                var type;
+                type=confirm(asking);
+
+                if(type == true){
+                    window.open("matepage2.html"); //confirm창에서 yes버튼 누르면 여행 메이트 구하는 창으로 이동
+                }
+                else{
+                    window.open("freewritepage.html"); //confirm창에서 no버튼 누르면 자유게시글창으로 이동
+                }
+            }  
+        </script>
+
+
+
+
+
+
+
+        <!--현 페이지의 맨 위로 올라가는 버튼-->
+        <a href="#top" title="현재 페이지 맨 위로 이동"><img src="image/top_button.JPG" class="topstatus" width=100px height=100px alt="위로 이동"></a>
+
+
+
+    </body>
+
+</html>
