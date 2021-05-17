@@ -1,0 +1,90 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="utf-8">
+
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+    <link rel="stylesheet" type="text/css" href="{% static 'blog/main.css' %}">
+    {% if title %}
+      <title>Tripstargram - {{title}} </title>
+    {% else %}
+      <title>Tripstargram  </title>
+    {% endif %}
+
+    <style type="text/css">
+      .line{border-color:black;border-style:solid;border-width:thin;}
+      .status{text-align:center;}
+      .topstatus{z-index:1;position:fixed; right:0px; top:90%;}
+      .img{width:"10";height:"10";position:relative;top:15px;}
+
+        body {background-color:white;overflow-x: hidden;}
+        ul li a{font-size: 18pt;font-weight:bold;text-align:center;text-decoration:none;color:black;}
+        ul li a span{color:black;background-color: rgb(221, 220, 220);position:relative;top:50px;margin:3px;}
+        ul li a span:hover{color:white;background-color: blue;}
+        ul {list-style:none; margin:0; padding:0;height:100%;position:relative;top:-10;background-color:white; font-size:15pt;}
+        ul li {width:25%;height:100%;margin: 1 1 1 1; padding: 0 0 0 0; border : 0;float: left;}
+
+
+    </style>
+
+  </head>
+
+  <body>
+    <div id="top">
+      <header class="status">
+          <ul>
+              <li><a href="login.html" title="로그인 창으로 이동"><img src= "{% static 'image/logo.jpg' %}"  class="img" /></a></li>
+              <li><a href="matepage1.html" onclick="check()" title="여행메이트를 구해요"><span>여행메이트를 구해요</span></a></li>
+              <li><a href="freewritepage.html" title="자유로운 글쓰기 게시판"><span>자유로운 글쓰기 게시판</span></a></li>
+              <li><a href="mypage.html" title="마이페이지로 이동"><img src=" {% static 'image/mypage.jpg' %}" class="img" /></a></li>
+          </ul>
+      </header>
+      <p><br/></p>
+      <p><br/></p>
+      <p><br/></p>
+      <hr class="line"/>
+
+      <script type="text/javascript">
+          function check(){
+              var asking="여행 메이트 게시판은 '실명제'로 운영되는 게시판입니다.\n 회원가입시, 작성된 프로필 정보로 운영됩니다.\n 게시판으로 입장하는 것에 동의하십니까?";
+              var type;
+              type=confirm(asking);
+
+              if(type == true){
+                  window.open("matepage2.html"); //confirm창에서 yes버튼 누르면 여행 메이트 구하는 창으로 이동
+              }
+              else{
+                  window.open("freewritepage.html"); //confirm창에서 no버튼 누르면 자유게시글창으로 이동
+              }
+          }
+      </script>
+
+    </div>
+
+
+
+    <main role="main" class="container">
+      <div class="row">
+
+        <div class="col-md-12">
+          {% block content %}{% endblock %}
+        </div>
+      </div>
+    </main>
+
+
+    <!-- Optional JavaScript -->
+    <!-- jQuery first, then Popper.js, then Bootstrap JS -->
+    <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></ script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous">< /script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
+
+
+  </body>
+</html>
