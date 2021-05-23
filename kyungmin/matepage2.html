@@ -1,0 +1,119 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Tripstargram</title>
+        <meta charset="UTF-8" />
+        <!--link는 검색어 옆에 돋보기 아이콘 때문에 넣었습니다.-->
+        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
+
+        <style type="text/css">
+            .line{border-color:black;border-style:solid;border-width:thin;}
+            .status{position:relative;margin:0 auto;text-align:center;}
+            .topstatus{z-index:1;position:fixed; right:0px; top:90%;}
+            .img{width:"10";height:"10";position:relative;top:15px;}
+            .writeposition{position:relative;left:20%;width:"8";height:"8";}
+            .navstyle {width:25%;height:100%;margin: 1 1 1 1; padding: 0 0 0 0; border : 0;float: left;}
+            .menustyle {width:15%;height:100%;border : 0;margin: 1 1 1 1; padding: 0 0 0 0;z-index:100;float: left;position:relative;left:19%;}
+            .dropmenustyle {width:15%;height:100%;margin: 1 1 1 1; padding: 0 0 0 0; border : 0;position:relative;left:19%;}
+            .context{width:60%;position:relative;margin:0 auto;text-align:center;height:100%;background-color: rgb(221, 220, 220);z-index:1;}
+            .articlestyle{padding:1%;margin:1%;text-align: left;}
+            #search{width:30%;border-radius:20px;border:1px solid black; margin:10px 0; padding:10px 12px; font-family: fontAwesome;}
+
+            body{margin:0;padding:0;height:100%;}
+            body{background-color:white;overflow-x: hidden;}
+            ul li a{font-size: 20pt;font-weight:bold;text-align:center;text-decoration:none;color:black;}
+            ul li a span{color:black;background-color: rgb(221, 220, 220);position:relative;top:50px;margin:3px;}
+            ul li a span:hover{color:white;background-color: blue;}
+            ul {list-style:none; margin:0; padding:0;height:100%;position:relative;top:-10;background-color:white; font-size:15pt;}
+
+            ul li{list-style: none; margin:0; padding:0;}
+
+            .menu{position:relative;top:50px;}
+            .menu2{position:absolute;top:100%;left:0;display:none;}
+            .menu2 li{ margin:1; padding:1;width:400px;border:1px solid black; background-color: rgb(221, 220, 220);}
+            .menu2 li a {font-size:17px;font-weight:bold;}
+            ul li ul li:hover{background-color: aqua;}
+            .menu li:hover .menu2{display:block;}
+
+        </style>
+    </head>
+
+    <body id="top">
+        <header class="status">
+            <ul>
+                <li class="navstyle"><a href="login.html" title="로그인 창으로 이동"><img src="image/logo.JPG" class="img" /></a></li>
+                <li class="navstyle"><a href="matepage1.html" onclick="check()" title="여행메이트를 구해요"><span>&nbsp;&nbsp;여행메이트를 구해요&nbsp;&nbsp;</span></a></li>
+                <li class="navstyle"><a href="freewritepage.html" title="자유로운 글쓰기 게시판"><span>&nbsp;&nbsp;자유로운 글쓰기 게시판&nbsp;&nbsp;</span></a></li>
+                <li class="navstyle"><a href="mypage.html" title="마이페이지로 이동"><img src="image/mypage.JPG" class="img" /></a></li>
+            </ul>
+        </header>
+        <p><br/></p>
+        <p><br/></p>
+        <p><br/></p>
+        <hr class="line"/>
+
+        <p><br/></p>
+        <p><br/></p>
+        <p><br/></p>
+        <div class="status">
+            <input id="search" type="text" placeholder="&#xf002">
+        </div>
+        
+        <div class="status">
+            <ul class="menu">
+                <li class="menustyle"><a href="matepageall.html" title="전체 게시판">전체보기</a></li>
+
+
+                <li class="menustyle"><a href="matepagepersonality.html" title="성격 게시판">성격</a>
+                    <ul class="menu2">
+                        <li><a href="matepageall.html" title="전체 게시판">외향(우린 벌써! 아니 이미! 친해졌어!)</a></li>
+                        <li><a href="matepageall.html" title="전체 게시판">내향(천천히 조금씩 우리 친해지자~)</a></li>
+                        <li><a href="matepageall.html" title="전체 게시판">계획적인 나!(다음 여행지는~~ 가고,,,)</a></li>
+                        <li><a href="matepageall.html" title="전체 게시판">자유분방(발길 닿는대로! 시선이 가는대로!)</a></li>
+                    </ul>
+                </li>
+
+                <li  class="menustyle"><a href="matepageconcept.html" title="여행 컨셉 게시판">여행컨셉</a>
+                    <ul class="menu2">
+                        <li><a href="matepageall.html" title="관광지/ 관광명소">관광지/ 관광명소 중심 여행</a></li>
+                        <li><a href="matepageall.html" title="먹거리 중심">먹거리 중심 여행</a></li>
+                        <li><a href="matepageall.html" title="사치(쇼핑) 중심">사치(쇼핑) 중심 여행</a></li>
+                        <li><a href="matepageall.html" title="자유 여행">자유 여행</a></li>
+                        <li><a href="matepageall.html" title="힐링/휴양 중심">힐링/휴양 중심 여행</a></li>
+                    </ul>
+                </li>
+
+                <li class="menustyle"><a href="matepageold.html" title="나이/성별 게시판">나이/성별</a>
+                    <ul class="menu2">
+                        <li><a href="matepageall.html" title="나이로 찾기">나이로 찾기</a></li>
+                        <li><a href="matepageall.html" title="성별로 찾기">성별로 찾기</a></li>
+                    </ul>
+                </li>
+                <li class="menustyle"><a href="writepage.html" title="글쓰러 가기" ><img class="writeposition" src="image/writeicon.JPG" /></a></li>
+            </ul>
+
+        </div>
+        <p><br/></p>
+        <hr width="60%" class="line"/>
+        <div class="context">
+            {% for post in posts %}
+            <article class="articlestyle">
+
+                <a href="...">{{ post.title }}</a><br/>
+                {{ post.content }}
+            </article>
+            <p><br/></p>
+            <p><br/></p>
+            {% endfor %}
+
+        </div>
+        <p><br/></p>
+
+        <!--현 페이지의 맨 위로 올라가는 버튼-->
+        <a href="#top" title="현재 페이지 맨 위로 이동"><img src="image/top_button.JPG" class="topstatus" width=100px height=100px alt="위로 이동"></a>
+
+
+
+    </body>
+
+</html>
