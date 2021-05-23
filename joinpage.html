@@ -1,0 +1,119 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Tripstargram</title>
+        <meta charset="UTF-8">
+        <style type = "text/css">
+        #center {text-align: center;}
+        span {font-size: 20px; width: 100px;}
+        </style>
+    </head>
+    
+    <body>
+        <h1 id="center">안녕하세요 처음오셨네요</h1>
+        <h4 id="center">자신과 맞는 여행메이트를 구하기 위해 아래 정보들을 선택해주세요</h4>
+        <section>
+            <fieldset style="border:3 solid black; background:lightgray;
+            padding: 5%;">
+                <form method="get" action="form_app.js">
+                    <span>사용자 아이디</span>
+                    <input type="text" name="p_id"/>
+                    <input type="button" value="중복체크" /><br><br>
+
+                    <span>비밀번호</span>
+                    <input type="password"><br><br>
+
+                    <span>비밀번호 확인</span>
+                    <input type="password"><br><br>
+
+                    <span>이름 </span>
+                    <input  type="text" name="p_name"/> <br><br>
+
+                    <span>나이</span>
+                    <input type="number" name="age" min="1" step="1" value="20" /> 살<br/><br>
+
+                    <span>전화번호</span> 
+                    <input  type="tel" name="p_tel" placeholder="000-0000-0000" 
+                           pattern="[0-9]{3}-[0-9]{4}-[0-9]{4}" /> <br><br>
+
+                    <span>이메일</span> 
+                    <input type="email" name="p_mail" placeholder="***@***.***"/><br><br>
+
+                    <span>성별</span> <br><br>
+                    <input type="radio" name="sex" value="male"/>남성
+                    <input type="radio" name="sex" value="female"/>여성<br><br>
+
+                    <span>여행여부 (언제든지 변경가능)</span><br><br>
+                        <input type="radio" name="Areyoutraveling" value="traveling"/>여행중이에요
+                        <input type="radio" name="Areyoutraveling" value="planning"/>여행 예정이에요
+                        <input type="radio" name="Areyoutraveling" value="notyet"/>아직 여행계획은 없어요
+                    <br><br>
+
+                    <span>여행컨셉</span><br><br>
+                        <input type="radio" name="concept" value="sightseeing"/> 관광명소 중심 여행
+                        <input type="radio" name="concept" value="eating"/> 먹거리 중심 여행
+                        <input type="radio" name="concept" value="shopping"/> 쇼핑 중심 여행
+                        <input type="radio" name="concept" value="free"/> 자유 여행
+                        <input type="radio" name="concept" value="healing"/> 힐링/휴양 여행
+                    <br><br>
+
+                    <span>선호하는 여행메이트의 연령대</span> 
+                    <select>
+                        <option>15~19</option>
+                        <option>20~24</option>
+                        <option>25~29</option>
+                        <option>30~34</option>
+                        <option>35~39</option>
+                        <option>40~44</option>
+                        <option>45~49</option>
+                        <option>50~54</option>
+                        <option>55~59</option>
+                        <option>60~64</option>
+                        <option>65~69</option>
+                        <option>70~74</option>
+                        <option>75~79</option>
+                    </select><br><br>
+
+                    <span>MBTI</span>
+                    <select name="MBTI" size="1"> 
+                        <option value="ENFJ" selected>ENFJ</option>
+                        <option value="ENFP">ENFP</option>
+                        <option value="ENTJ">ENTJ</option>
+                        <option value="ENTP">ENTP</option>
+                        <option value="ESFJ">ESFJ</option>
+                        <option value="ESFP">ESFP</option>
+                        <option value="ESTJ">ESTJ</option>
+                        <option value="ESTP">ESTP</option>
+                        <option value="INFJ">INFJ</option>
+                        <option value="INFP">INFP</option>
+                        <option value="INTJ">INTJ</option>
+                        <option value="INTP">INTP</option>
+                        <option value="ISFJ">ISFJ</option>
+                        <option value="ISFP">ISFP</option>
+                        <option value="ISTJ">ISTJ</option>
+                        <option value="ISTP">ISTP</option>
+                    </select><br><br>
+
+                    <span>자기소개 </span><br>
+                        <textarea name="comment" cols="80" rows="10">
+                        </textarea>
+                    <hr>
+                    <input type="submit" onclick="check()" value="제출하기"/>
+                    <script type="text/javascript">
+                        function check(){
+                            var asking="제출하시겠습니까?";
+                            var type;
+                            type=confirm(asking);
+                            if(type == true){
+                                window.open("joinedpage.html"); 
+                            }
+                            else{
+                                window.open("joinpage.html");
+                            }
+                        }
+                    </script>
+                </form>
+            </fieldset>
+    </body>
+
+</html>
