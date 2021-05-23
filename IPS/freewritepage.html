@@ -1,0 +1,200 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Tripstargram</title>
+        <meta charset="UTF-8" />
+        <!--link는 검색어 옆에 돋보기 아이콘 때문에 넣었습니다.-->
+        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
+
+        <style type="text/css">
+            .line{border-color:black;border-style:solid;border-width:thin;}
+            .status{position:relative;margin:0 auto;text-align:center;}
+            .topstatus{z-index:1;position:fixed; right:0px; top:90%;}
+            .img{width:"10";height:"10";position:relative;top:15px;}
+            .writeposition{position:relative;left:20%;width:"8";height:"8";}
+            .navstyle {width:25%;height:100%;margin: 1 1 1 1; padding: 0 0 0 0; border : 0;float: left;}
+            .menustyle {width:13.5%;height:100%;border : 0;margin: 1 1 1 1; padding: 0 0 0 0;z-index:100;float: left;position:relative;left:5%;}
+            .buttonstyle {width:10%; height:100%; margin: 1 1 1 1; padding: 0 0 0 0; border : 0;float: right; right:10%;}
+            .dropmenustyle {width:13.5%;height:50%;margin: 1 1 1 1; padding: 0 0 0 0; border : 0;;position:relative;left:5%;}
+            .context{width:80%;position:relative;margin:0 auto;text-align:center;height:100%;background-color: rgb(221, 220, 220);z-index:1;}
+            .articlestyle{padding:1%;margin:1%;text-align: left;}
+            #search{width:30%;border-radius:20px;border:1px solid black; margin:10px 0; padding:10px 12px; font-family: fontAwesome;}
+
+            body{margin:0;padding:0;height:100%;} 
+            body{background-color:white;overflow-x: hidden;}
+            ul li a{font-size: 20pt;font-weight:bold;text-align:center;text-decoration:none;color:black;}  
+            ul li a span{color:black;background-color: rgb(221, 220, 220);position:relative;top:50px;margin:3px;}
+            ul li a span:hover{color:white;background-color: blue;}
+            ul {list-style:none; margin:0; padding:0;height:100%;position:relative;top:-10;background-color:white; font-size:15pt;}
+            
+            ul li{list-style: none; margin:0; padding:0;}
+
+            .menu{position:relative;top:30px;}
+            .menu2{position:absolute;top:100%;left:0;display:none;}
+            .menu2 li{ margin:1; padding:1;width:200px;border:1px solid black; background-color: rgb(221, 220, 220);}
+            .menu2 li a {font-size:17px;font-weight:bold;}
+            ul li ul li:hover{background-color: aqua;}
+            .menu li:hover .menu2{display:block;}
+
+            table {width: 100%;}
+            
+        </style>
+    </head>
+
+    <body id="top">      
+        <header class="status">
+            <ul>
+                <li class="navstyle"><a href="login.html" title="로그인 창으로 이동"><img src="image/logo.JPG" class="img" /></a></li>
+                <li class="navstyle"><a href="matepage1.html" onclick="check()" title="여행메이트를 구해요"><span>&nbsp;&nbsp;여행메이트를 구해요&nbsp;&nbsp;</span></a></li>
+                <li class="navstyle"><a href="freewritepage.html" title="자유로운 글쓰기 게시판"><span>&nbsp;&nbsp;자유로운 글쓰기 게시판&nbsp;&nbsp;</span></a></li>
+                <li class="navstyle"><a href="mypage.html" title="마이페이지로 이동"><img src="image/mypage.JPG" class="img" /></a></li>
+            </ul>
+        </header>
+        <p><br/></p>
+        <p><br/></p>
+        <p><br/></p>
+        <hr class="line"/> 
+
+        <script type="text/javascript">
+            function check(){
+                var asking="여행 메이트 게시판은 '실명제'로 운영되는 게시판입니다.\n 회원가입시, 작성된 프로필 정보로 운영됩니다.\n 게시판으로 입장하는 것에 동의하십니까?";
+                var type;
+                type=confirm(asking);
+
+                if(type == true){
+                    window.open("matepage2.html"); //confirm창에서 yes버튼 누르면 여행 메이트 구하는 창으로 이동
+                }
+                else{
+                    window.open("freewritepage.html"); //confirm창에서 no버튼 누르면 자유게시글창으로 이동
+                }
+            }  
+        </script>
+
+        <p><br/></p>
+        <p><br/></p>
+        <p><br/></p>
+        <div class="status">
+            <ul>
+                <li><input id="search" type="text" placeholder="&#xf002"></li>
+                <li class="buttonstyle"><input type="button"  value="초대 글쓰기" onClick="writecheck()"/></li>
+                <li class="buttonstyle"><a href="1.html" title="일반 글쓰기"><input type="button" value="일반 글쓰기" /></a></li>
+            </ul>
+        </div>
+
+        <script type="text/javascript">
+            function writecheck(){
+                var asking="초대 글쓰기는'실명제'로 사용 가능합니다.\n 회원가입시, 작성된 프로필 정보로 운영됩니다.\n 실명으로 초대 글쓰기 작성 페이지로 입장하는 것에 동의하십니까?";
+                var type;
+                type=confirm(asking);
+
+                if(type == true){
+                    window.open("invitewritepage.html");
+                }
+                else{
+                    window.open("freewritepage.html");
+                }
+            }  
+        </script>
+
+        <p><br/></p>
+        <div class="status">
+            <ul class="menu">
+                <li class="menustyle"><a href="freepageall.html" title="전체 게시판">전체보기</a></li>
+
+
+                <li class="menustyle"><a href="freepageasia.html" title="아시아">아시아</a>
+                    <ul class="menu2">
+                        <li><a href="freepagecentralasia.html" title="중앙아시아">중앙아시아</a></li>
+                        <li><a href="freepagewestasia.html" title="서아시아">서아시아</a></li>
+                        <li><a href="freepagenorthasia.html" title="동북아시아/북아시아">동북아시아/북아시아</a></li>
+                        <li><a href="freepagesouthasia.html" title="동남아시아/남아시아">동남아시아/남아시아</a></li>
+                    </ul>
+                </li>
+
+                <li  class="menustyle"><a href="freepageeurope.html" title="유럽">유럽</a>
+                    <ul class="menu2">
+                        <li><a href="freepageeasteurope.html" title="동유럽">동유럽</a></li>
+                        <li><a href="freepagewesteurope.html" title="서유럽">서유럽</a></li>
+                        <li><a href="freepagesoutheurope.html" title="남유럽">남유럽</a></li>
+                        <li><a href="freepagenortheurope.html" title="북유럽">북유럽</a></li>
+                    </ul>
+                </li>
+ 
+                <li class="menustyle"><a href="freepageamerica.html" title="아메리카">아메리카</a>
+                    <ul class="menu2">
+                        <li><a href="freepagenorthamerica.html" title="북아메리카">북아메리카</a></li>
+                        <li><a href="freepagesouthamerica.html" title="남아메리카">남아메리카</a></li>
+                    </ul>
+                </li>
+
+                <li class="menustyle"><a href="freepageafrica.html" title="아프리카">아프리카</a>
+                    <ul class="menu2">
+                        <li><a href="freepageafrica.html" title="아프리카">아프리카</a></li>
+                    </ul>
+                </li>
+
+                <li class="menustyle"><a href="freepageantarcticaandoceania.html" title="남극/오세아니아">남극/오세아니아</a>
+                    <ul class="menu2">
+                        <li><a href="freepageantarctica.html" title="남극">남극</a></li>
+                        <li><a href="freepageoceania.html" title="오세아니아">오세아니아</a></li>
+                    </ul>
+                </li>
+            </ul>
+
+        </div>
+        <p><br/></p>
+        <p><br/></p>
+        <hr width="100%" class="line"/> 
+        <div class="context">
+            <table>
+                <thead>
+
+					<tr>
+						<th style="background-color: #eeeeee; text-align: center;">번호</th>
+						<th style="background-color: #eeeeee; width: 60%;text-align: center;">제목</th>
+						<th style="background-color: #eeeeee; text-align: center;">작성자</th>
+						<th style="background-color: #eeeeee; text-align: center;">작성일</th>
+                        <th style="background-color: #eeeeee; text-align: center;">조회</th>
+                        <th style="background-color: #eeeeee; text-align: center;">좋아요</th>
+					</tr>
+
+				</thead>
+
+                <tbody>
+
+					<tr>
+                        <td>1</td>
+                        <td>
+                        <a href="...">글제목1</a>
+                        <img width="13" height="12" class="pic" alt="첨부이미지" src="">
+                        </td>
+                        <td>글쓴이이름</td>
+                        <td>2021/05/18</td>
+                        <td>1234</td>
+                        <td>1234</td>
+                    </tr>
+                    <tr>
+
+						<td>2</td>
+                        <td><a href="...">글제목2</a></td>
+                        <td>트립</td>
+                        <td>트립</td>
+                        <td>트립</td>
+                        <td>트립</td>
+
+					</tr>
+
+
+				</tbody>
+              </table>
+        </div>
+        <p><br/></p>
+
+        <!--현 페이지의 맨 위로 올라가는 버튼-->
+        <a href="#top" title="현재 페이지 맨 위로 이동"><img src="image/top_button.JPG" class="topstatus" width=100px height=100px alt="위로 이동"></a>
+
+
+
+    </body>
+
+</html>
