@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Tripstargram</title>
+        <meta charset="UTF-8" />
+
+        <style type="text/css">
+            .line{border-color:black;border-style:solid;border-width:thin;}
+            .status{position:relative;margin:0 auto;text-align:center;}
+            .topstatus{z-index:1;position:fixed; right:0px; top:90%;}
+            .leftstatus{z-index:1;position:fixed; left:0px; top:90%;}
+            .img{width:"10";height:"10";position:relative;top:15px;}
+            .writeposition{position:relative;left:20%;width:"8";height:"8";}
+            .navstyle {width:25%;height:100%;margin: 1 1 1 1; padding: 0 0 0 0; border : 0;float: left;}
+            .context{width:70%;position:relative;margin:0 auto;text-align:center;height:100%;background-color: rgb(221, 220, 220);z-index:1;}
+            .articlestyle{padding:1%;margin:1%;text-align: left;}
+            #search{width:30%;border-radius:20px;border:1px solid black; margin:10px 0; padding:10px 12px; font-family: fontAwesome;}
+
+            body{margin:0;padding:0;height:100%;} 
+            body{background-color:white;overflow-x: hidden;}
+            ul li a{font-size: 20pt;font-weight:bold;text-align:center;text-decoration:none;color:black;}  
+            ul li a span{color:black;background-color: rgb(221, 220, 220);position:relative;top:50px;margin:3px;}
+            ul li a span:hover{color:white;background-color: blue;}
+            ul {list-style:none; margin:0; padding:0;height:100%;position:relative;top:-10;background-color:white; font-size:15pt;}
+            
+            ul li{list-style: none; margin:0; padding:0;}
+
+        </style>
+    </head>
+
+    <body id="top">      
+        <header class="status">
+            <ul>
+                <li class="navstyle"><a href="login.html" title="로그인 창으로 이동"><img src="image/logo.JPG" class="img" /></a></li>
+                <li class="navstyle"><a href="matepage1.html" onclick="check()" title="여행메이트를 구해요"><span>&nbsp;&nbsp;여행메이트를 구해요&nbsp;&nbsp;</span></a></li>
+                <li class="navstyle"><a href="freewritepage.html" title="자유로운 글쓰기 게시판"><span>&nbsp;&nbsp;자유로운 글쓰기 게시판&nbsp;&nbsp;</span></a></li>
+                <li class="navstyle"><a href="mypage.html" title="마이페이지로 이동"><img src="image/mypage.JPG" class="img" /></a></li>
+            </ul>
+        </header>
+        <p><br/></p>
+        <p><br/></p>
+        <p><br/></p>
+        <hr class="line"/> 
+        <p><br/></p>
+
+        <div >
+            <form method="post" action="form_app.js">
+
+                <table style="margin-left:auto; margin-right:auto; width: 60%;  text-align: center; background-color: rgb(221, 220, 220); border: 1px solid #dddddd">
+
+                    <tbody>
+                        <tr>
+                            <td colspan="2"><input type="text"  style='font-size:20pt' placeholder="글 제목" name="Title" style="margin-left:auto; margin-right:auto; width: 90%;"/></td>
+                            <td><input type="image" style="float:right" src="image/submit.gif" alt="전송 버튼"/></td>
+                        </tr>
+                        <tr>
+                            <td></td>
+                            <td>
+                                <select name="emoticon">
+                                    <option value="😍">😍</option>
+                                    <option value="😀">😀</option>
+                                    <option value="😭">😭</option>
+                                    <option value="💖">💖</option>
+                                  </select>
+                            </td>
+
+                        </tr>
+                        <tr>
+                            <td><img src="image/map.PNG"></td>
+                            <td><input type="text" placeholder="글 내용" name="Content" style="width: 400px; height: 250px; "/></td>
+                        </tr>
+
+                        <tr>
+                            <td></td>
+                            <td>약속 시간: <input type="datetime-local"> </td>
+                        </tr>
+
+                        <tr>
+                            <td>약속 장소:<input id="search" type="text"></td>
+                            <td>
+                                <input type=file name='fileup1' style='display: none;' >
+                                <input type='text' name='fileup2' id='fileup2'>
+                                <img src='image/picture.PNG' width="40px" name='find' id='find' border='0' onclick='document.all.fileup1.click(); document.all.fileup2.value=document.all.fileup1.value' style="cursor:hand;">
+                                <input type=file name='fileup3' style='display: none;' >
+                                <img src='image/cloud.PNG' width="40px" name='find' id='find' border='0' onclick='document.all.fileup3.click(); document.all.fileup2.value=document.all.fileup1.value' style="cursor:hand;">
+                            </td>
+                        </tr>
+
+                    </tbody>
+
+                </table>
+
+            </form>
+
+        </div>
+            <a href="freewritepage.html" title="뒤로가기"><img src="image/back.PNG" class="leftstatus" width=100px height=35px alt="뒤로가기"></a>
+    
+    </body>
+</html>
